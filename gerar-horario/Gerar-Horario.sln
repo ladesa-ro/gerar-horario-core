@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerar-Horario", "Gerar-Horario.csproj", "{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E3B5849-2418-425E-B1B8-2D60AA5BAFF3}
+	EndGlobalSection
+EndGlobal
