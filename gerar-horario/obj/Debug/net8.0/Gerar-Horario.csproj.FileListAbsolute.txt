@@ -25,3 +25,4 @@ C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\ge
 C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\Gerar-Horario.pdb
 C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\Gerar-Horario.genruntimeconfig.cache
 C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\ref\Gerar-Horario.dll
+C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\Gerar-Horario.sourcelink.json

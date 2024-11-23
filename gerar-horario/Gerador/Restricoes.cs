@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using Google.OrTools.ModelBuilder;
 using Google.OrTools.Sat;
 using Sisgea.GerarHorario.Core.Dtos.Configuracoes;
 using Sisgea.GerarHorario.Core.Dtos.Entidades;
@@ -8,6 +9,7 @@ using Sisgea.GerarHorario.Core.Dtos.Entidades;
 namespace Sisgea.GerarHorario.Core;
 
 using CombinacaoAula = (int diaSemanaIso, int intervaloIndex, string turmaId, string diarioId, string professorId);
+using LinearExpr = Google.OrTools.Sat.LinearExpr;
 
 public class Restricoes
 {
@@ -386,25 +388,70 @@ public class Restricoes
     {
         foreach (var turma in contexto.Options.Turmas)
         {
+            var horariosUsados = new HashSet<(int DiaSemanaIso, int IntervaloIndex)>();
+            var propostasEscolhidasFinais = new List<PropostaDeAula>();
+
+
             foreach (var diario in turma.DiariosDaTurma)
             {
-                var propostas = from proposta in contexto.TodasAsPropostasDeAula
-                                where proposta.TurmaId == turma.Id
-                                && proposta.DiarioId == diario.Id
-                                select proposta;
 
+
+                Console.WriteLine("\n");
+
+                int diaSorteado = 0;
+                var consecutivas = new List<PropostaDeAula>();
                 Random sorteio = new Random();
-                int skip = sorteio.Next(propostas.Count() - diario.QuantidadeMaximaSemana);
 
 
-                foreach (var carro in propostas)
+                var todasPropostas = from proposta in contexto.TodasAsPropostasDeAula
+                                     where proposta.TurmaId == turma.Id
+                                     && proposta.DiarioId == diario.Id
+                                     select proposta;
+
+                if (todasPropostas.Any())
                 {
-                    Console.WriteLine($"- Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloIndex} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
-                }
-            }
-        }
-    }
+                    while (consecutivas.Count < diario.QuantidadeMaximaSemana)
+                    {
 
+                    }
+
+                    //SORTEAR O DIA 
+                    var diasDaSemana = todasPropostas.Select(p => p.DiaSemanaIso).Distinct().ToList();
+                    int indiceSorteado = sorteio.Next(diasDaSemana.Count);
+                    diaSorteado = diasDaSemana[indiceSorteado];
+                    Console.WriteLine($"Dia sorteado: {diaSorteado}");
+
+
+                    var propostasSorteadas = from proposta in todasPropostas
+                                             where proposta.TurmaId == turma.Id
+                                             && proposta.DiarioId == diario.Id
+                                             && proposta.DiaSemanaIso == diaSorteado
+                                             select proposta;
+
+                    int skip = sorteio.Next(propostasSorteadas.Count() - diario.QuantidadeMaximaSemana);
+
+
+                    var propostasFinais = propostasSorteadas.Skip(skip).Take(diario.QuantidadeMaximaSemana).ToList();
+
+                    foreach (var carro in propostasFinais)
+                    {
+                        if (!horariosUsados.Contains((carro.DiaSemanaIso, carro.IntervaloIndex)))//SE NAO CONTEM NOS HORARIOS USADOS O DIA E INTERVALO SORTEADO
+                        {
+                            Console.WriteLine($"- Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloIndex} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
+                            horariosUsados.Add((carro.DiaSemanaIso, carro.IntervaloIndex));
+
+
+                        }
+
+
+                    }
+                    skip++;
+                }
+
+            }
+
+        }
+}
 
 
     public static void AgruparDisciplinasParametro2(GerarHorarioContext contexto, string[] diarioId, int[] diaSemana, int[] quantidadeDesejada)
@@ -520,6 +567,44 @@ public class Restricoes
         }
 
     }
+
+    ///<summary>
+    /// RESTRIÇÃO: Todo professor deve ter 1 dia sem aulas (PRD na segunda ou na sexta).
+    ///</summary>
+    public static void PadronizarPRD(GerarHorarioContext contexto)
+    {
+        foreach (var professor in contexto.Options.Professores)
+        {
+          
+            int[] DiaSemanaIsoPRD = {1, 5};
+            Random sorteio = new Random();
+            int indiceSorteado = sorteio.Next(DiaSemanaIsoPRD.Length);
+            int diaSorteado = DiaSemanaIsoPRD[indiceSorteado];
+
+            var propostasSorteada = from proposta in contexto.TodasAsPropostasDeAula
+                                    where proposta.ProfessorId == professor.Id
+                                    && proposta.DiaSemanaIso == diaSorteado
+                                    select proposta.ModelBoolVar;
+
+            var negatedVariables = propostasSorteada.Select(v => v.Not()).ToArray();
+            contexto.Model.AddBoolAnd(negatedVariables);
+
+        }
+    }
+    public static void EspecificarPRD(GerarHorarioContext contexto, string idProfessor, int DiaSemanaEscolhido)
+    {
+        
+            var propostasSorteada = from proposta in contexto.TodasAsPropostasDeAula
+                                    where proposta.ProfessorId == idProfessor
+                                    && proposta.DiaSemanaIso == DiaSemanaEscolhido
+                                    select proposta.ModelBoolVar;
+
+
+        Console.WriteLine("o PRD do professor " + idProfessor + " foi escolhido para ser no " + DiaSemanaEscolhido);
+        var negatedVariables = propostasSorteada.Select(v => v.Not()).ToArray();
+            contexto.Model.AddBoolAnd(negatedVariables);
+    }
+
 }
 
 
