@@ -411,7 +411,10 @@
           "Google.OrTools": "9.11.4210"
         },
         "runtime": {
-          "Gerar-Horario.dll": {}
+          "Gerar-Horario.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gerar_Horario
-build_property.ProjectDir = C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\
+build_property.ProjectDir = /Users/urielprocopio/Documents/SISGHA/gerar-horario/gerar-horario-core/gerar-horario/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

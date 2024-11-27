@@ -7,12 +7,14 @@ namespace Gerar_Horario_Test
         [SetUp]
         public void Setup()
         {
+            System.Console.WriteLine("teste");
+            var mainTestResult = ProgramTest.MainTest();
+            RestricoesTest.ProfessorNaoPodeTrabalharEmTresTurnosDiferentesTest(mainTestResult.Item2, mainTestResult.Item1);
         }
 
         [Test]
         public void Test1()
         {
-            RestricoesTest.ProfessorNaoPodeTrabalharEmTresTurnosDiferentesTest(ProgramTest.MainTest().Item2, ProgramTest.MainTest().Item1);
         }
     }
 }

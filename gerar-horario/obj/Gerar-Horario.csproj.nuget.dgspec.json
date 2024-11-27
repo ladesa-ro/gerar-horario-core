@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerar-Horario.csproj": {}
+    "/Users/urielprocopio/Documents/SISGHA/gerar-horario/gerar-horario-core/gerar-horario/Gerar-Horario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerar-Horario.csproj": {
+    "/Users/urielprocopio/Documents/SISGHA/gerar-horario/gerar-horario-core/gerar-horario/Gerar-Horario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerar-Horario.csproj",
+        "projectUniqueName": "/Users/urielprocopio/Documents/SISGHA/gerar-horario/gerar-horario-core/gerar-horario/Gerar-Horario.csproj",
         "projectName": "Gerar-Horario",
-        "projectPath": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerar-Horario.csproj",
-        "packagesPath": "C:\\Users\\2022102020037\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\obj\\",
+        "projectPath": "/Users/urielprocopio/Documents/SISGHA/gerar-horario/gerar-horario-core/gerar-horario/Gerar-Horario.csproj",
+        "packagesPath": "/Users/urielprocopio/.nuget/packages/",
+        "outputPath": "/Users/urielprocopio/Documents/SISGHA/gerar-horario/gerar-horario-core/gerar-horario/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\2022102020037\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/urielprocopio/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

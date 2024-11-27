@@ -94,15 +94,27 @@ public class Program
                     //
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),//SEXTA DAS 07:30 AS 12:00
                 ]
-            ),
+            ),*/
 
              new(
                 "4",
                 "2 PERIODO ADS",
                 [
-                    new Diario (Id: "diario:4_1", TurmaId: "turma:4", ProfessorId: "2", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 1),
-                    new Diario (Id: "diario:4_3", TurmaId: "turma:4", ProfessorId: "1", DisciplinaId: "disciplina:1", QuantidadeMaximaSemana: 3),
-                    new Diario (Id: "diario:4_2", TurmaId: "turma:4", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 2),
+                    new Diario (Id: "diario:4_1", TurmaId: "turma:4", ProfessorId:  "1", DisciplinaId: "disciplina:1", QuantidadeMaximaSemana: 2),//SOCIOLOGIA
+                    new Diario (Id: "diario:4_2", TurmaId: "turma:4", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 1),//QUIMICA
+                    new Diario (Id: "diario:4_3", TurmaId: "turma:4", ProfessorId: "3", DisciplinaId: "disciplina:3", QuantidadeMaximaSemana: 2),//ESPANHOL
+                    new Diario (Id: "diario:4_4", TurmaId: "turma:4", ProfessorId: "4", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 3),//PORTUGUES
+                    new Diario (Id: "diario:4_5", TurmaId: "turma:4", ProfessorId: "5", DisciplinaId: "disciplina:5", QuantidadeMaximaSemana: 2),//HISTÓRIA
+                    new Diario (Id: "diario:4_6", TurmaId: "turma:4", ProfessorId: "6", DisciplinaId: "disciplina:6", QuantidadeMaximaSemana: 1),//FILOSOFIA
+                    new Diario (Id: "diario:4_7", TurmaId: "turma:4", ProfessorId: "7", DisciplinaId: "disciplina:7", QuantidadeMaximaSemana: 4),//REDES
+                    new Diario (Id: "diario:4_8", TurmaId: "turma:4", ProfessorId: "8", DisciplinaId: "disciplina:8", QuantidadeMaximaSemana: 4),//PW
+                    new Diario (Id: "diario:4_9", TurmaId: "turma:4", ProfessorId: "9", DisciplinaId: "disciplina:9", QuantidadeMaximaSemana: 3),//MATEMATICA
+                    new Diario (Id: "diario:4_10", TurmaId: "turma:4", ProfessorId: "10", DisciplinaId: "disciplina:10", QuantidadeMaximaSemana: 2),//BD
+                    new Diario (Id: "diario:4_11", TurmaId: "turma:4", ProfessorId: "11", DisciplinaId: "disciplina:11", QuantidadeMaximaSemana: 2),//ED. FISICA 
+                    new Diario (Id: "diario:4_12", TurmaId: "turma:4", ProfessorId: "12", DisciplinaId: "disciplina:12", QuantidadeMaximaSemana: 2),//EMPREENDEDORISMO
+                    new Diario (Id: "diario:4_13", TurmaId: "turma:4", ProfessorId: "13", DisciplinaId: "disciplina:13", QuantidadeMaximaSemana: 1), //SST
+                    new Diario (Id: "diario:4_14", TurmaId: "turma:4", ProfessorId: "14", DisciplinaId: "disciplina:14", QuantidadeMaximaSemana: 3), //PDS
+                    new Diario (Id: "diario:4_15", TurmaId: "turma:4", ProfessorId: "15", DisciplinaId: "disciplina:15", QuantidadeMaximaSemana: 1),//FISICA
                 ],
                 [
                     //
@@ -118,7 +130,7 @@ public class Program
                     //
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),//SEXTA DAS 07:30 AS 12:00
                 ]
-            ),*/
+            ),
         };
 
         var professores = new Professor[] {
