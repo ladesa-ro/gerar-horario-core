@@ -20,7 +20,7 @@ public class GeradorSolutionCallback : CpSolverSolutionCallback
         var propostasAtivas = from propostaAula in this.Contexto.TodasAsPropostasDeAula
                               where
                                 BooleanValue(propostaAula.ModelBoolVar)
-                              select new HorarioGeradoAula(propostaAula.TurmaId, propostaAula.DiarioId, propostaAula.IntervaloIndex, propostaAula.DiaSemanaIso);
+                              select new HorarioGeradoAula(propostaAula.TurmaId, propostaAula.DiarioId, propostaAula.IntervaloIndex, propostaAula.DiaSemanaIso, propostaAula.ProfessorId);
 
         var horarioGerado = new HorarioGerado
         {

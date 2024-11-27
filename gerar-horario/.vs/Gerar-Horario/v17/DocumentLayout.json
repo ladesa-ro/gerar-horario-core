@@ -1,12 +1,153 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E298B0CA-14AE-42AA-93D1-22B3406A95E9}|..\\Gerar-Horario-Test\\Gerar-Horario-Test.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario-test\\restricoestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario\\gerador\\restricoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|solutionrelative:gerador\\restricoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario\\gerador\\gerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|solutionrelative:gerador\\gerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E298B0CA-14AE-42AA-93D1-22B3406A95E9}|..\\Gerar-Horario-Test\\Gerar-Horario-Test.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario-test\\maintest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E298B0CA-14AE-42AA-93D1-22B3406A95E9}|..\\Gerar-Horario-Test\\Gerar-Horario-Test.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario-test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario\\dtos\\horariogerado\\horariogeradoaula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|solutionrelative:dtos\\horariogerado\\horariogeradoaula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|c:\\users\\2022102020037\\documents\\gerar-horario-core\\gerar-horario\\gerador\\geradorsolutioncallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}|Gerar-Horario.csproj|solutionrelative:gerador\\geradorsolutioncallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GeradorSolutionCallback.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerador\\GeradorSolutionCallback.cs",
+              "RelativeDocumentMoniker": "Gerador\\GeradorSolutionCallback.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerador\\GeradorSolutionCallback.cs",
+              "RelativeToolTip": "Gerador\\GeradorSolutionCallback.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAowBsAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T19:09:54.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Restricoes.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerador\\Restricoes.cs",
+              "RelativeDocumentMoniker": "Gerador\\Restricoes.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerador\\Restricoes.cs",
+              "RelativeToolTip": "Gerador\\Restricoes.cs",
+              "ViewState": "AQIAAAABAAAAAAAAAAAYwAwBAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T19:09:44.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HorarioGeradoAula.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Dtos\\HorarioGerado\\HorarioGeradoAula.cs",
+              "RelativeDocumentMoniker": "Dtos\\HorarioGerado\\HorarioGeradoAula.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Dtos\\HorarioGerado\\HorarioGeradoAula.cs",
+              "RelativeToolTip": "Dtos\\HorarioGerado\\HorarioGeradoAula.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T19:08:16.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\Gerar-Horario-Test\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\Gerar-Horario-Test\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\Gerar-Horario-Test\\UnitTest1.cs",
+              "RelativeToolTip": "..\\Gerar-Horario-Test\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T18:45:33.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainTest.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\Gerar-Horario-Test\\MainTest.cs",
+              "RelativeDocumentMoniker": "..\\Gerar-Horario-Test\\MainTest.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\Gerar-Horario-Test\\MainTest.cs",
+              "RelativeToolTip": "..\\Gerar-Horario-Test\\MainTest.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAgwGwAAABzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T18:45:34.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Gerador.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerador\\Gerador.cs",
+              "RelativeDocumentMoniker": "Gerador\\Gerador.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerador\\Gerador.cs",
+              "RelativeToolTip": "Gerador\\Gerador.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAcwCwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T18:44:27.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RestricoesTests.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\Gerar-Horario-Test\\RestricoesTests.cs",
+              "RelativeDocumentMoniker": "..\\Gerar-Horario-Test\\RestricoesTests.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\Gerar-Horario-Test\\RestricoesTests.cs",
+              "RelativeToolTip": "..\\Gerar-Horario-Test\\RestricoesTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T18:36:47.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Main.cs",
+              "RelativeDocumentMoniker": "Main.cs",
+              "ToolTip": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Main.cs",
+              "RelativeToolTip": "Main.cs",
+              "ViewState": "AQIAAJEBAAAAAAAAAAAAAJsBAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T17:53:09.321Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

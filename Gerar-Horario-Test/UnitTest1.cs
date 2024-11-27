@@ -1,3 +1,5 @@
+using Sisgea.GerarHorario.Core;
+
 namespace Gerar_Horario_Test
 {
     public class Tests
@@ -10,7 +12,7 @@ namespace Gerar_Horario_Test
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            RestricoesTest.ProfessorNaoPodeTrabalharEmTresTurnosDiferentesTest(ProgramTest.MainTest().Item2, ProgramTest.MainTest().Item1);
         }
     }
 }
