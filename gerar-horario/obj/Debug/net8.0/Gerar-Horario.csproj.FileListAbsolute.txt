@@ -26,3 +26,31 @@ C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\ge
 C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\Gerar-Horario.genruntimeconfig.cache
 C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\ref\Gerar-Horario.dll
 C:\Users\proco\OneDrive\Documentos\Visual Studio 2022\Programas\gerar-horario\gerar-horario\obj\Debug\net8.0\Gerar-Horario.sourcelink.json
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Gerar-Horario.exe
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Gerar-Horario.deps.json
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Gerar-Horario.runtimeconfig.json
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Gerar-Horario.dll
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Gerar-Horario.pdb
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Google.OrTools.dll
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\linux-arm64\native\google-ortools-native.so
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\linux-arm64\native\libortools.so.9
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\linux-x64\native\google-ortools-native.so
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\linux-x64\native\libortools.so.9
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\osx-arm64\native\google-ortools-native.dylib
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\osx-arm64\native\libortools.9.dylib
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\osx-x64\native\google-ortools-native.dylib
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\osx-x64\native\libortools.9.dylib
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\bin\Debug\net8.0\runtimes\win-x64\native\google-ortools-native.dll
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.csproj.AssemblyReference.cache
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.AssemblyInfoInputs.cache
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.AssemblyInfo.cs
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.csproj.CoreCompileInputs.cache
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.sourcelink.json
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Ho.6E5C7C3C.Up2Date
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.dll
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\refint\Gerar-Horario.dll
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.pdb
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\Gerar-Horario.genruntimeconfig.cache
+C:\Users\2022102020037\Documents\gerar-horario-core\gerar-horario\obj\Debug\net8.0\ref\Gerar-Horario.dll

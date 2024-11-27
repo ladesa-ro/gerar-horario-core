@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerar-Horario", "Gerar-Horario.csproj", "{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gerar-Horario", "Gerar-Horario.csproj", "{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerar-Horario-Test", "..\Gerar-Horario-Test\Gerar-Horario-Test.csproj", "{E298B0CA-14AE-42AA-93D1-22B3406A95E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{774E80C4-C7BF-4E08-8A1C-68FD99EF26BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

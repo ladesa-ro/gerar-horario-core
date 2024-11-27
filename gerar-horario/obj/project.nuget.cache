@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "xqjahRGFk9dgUlWMicOIKtjc9zo0izxPKqVk3d6fTHyT/38wVdCPomPw0a2CXzDG/gKtDBxwZjcoH1bDzT3+Ug==",
+  "dgSpecHash": "+tnU8RdiCMw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\proco\\OneDrive\\Documentos\\Visual Studio 2022\\Programas\\gerar-horario\\Gerar-Horario\\Gerar-Horario.csproj",
+  "projectFilePath": "C:\\Users\\2022102020037\\Documents\\gerar-horario-core\\gerar-horario\\Gerar-Horario.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\proco\\.nuget\\packages\\google.ortools\\9.11.4210\\google.ortools.9.11.4210.nupkg.sha512",
-    "C:\\Users\\proco\\.nuget\\packages\\google.ortools.runtime.linux-arm64\\9.11.4210\\google.ortools.runtime.linux-arm64.9.11.4210.nupkg.sha512",
-    "C:\\Users\\proco\\.nuget\\packages\\google.ortools.runtime.linux-x64\\9.11.4210\\google.ortools.runtime.linux-x64.9.11.4210.nupkg.sha512",
-    "C:\\Users\\proco\\.nuget\\packages\\google.ortools.runtime.osx-arm64\\9.11.4210\\google.ortools.runtime.osx-arm64.9.11.4210.nupkg.sha512",
-    "C:\\Users\\proco\\.nuget\\packages\\google.ortools.runtime.osx-x64\\9.11.4210\\google.ortools.runtime.osx-x64.9.11.4210.nupkg.sha512",
-    "C:\\Users\\proco\\.nuget\\packages\\google.ortools.runtime.win-x64\\9.11.4210\\google.ortools.runtime.win-x64.9.11.4210.nupkg.sha512",
-    "C:\\Users\\proco\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512"
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.ortools\\9.11.4210\\google.ortools.9.11.4210.nupkg.sha512",
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.ortools.runtime.linux-arm64\\9.11.4210\\google.ortools.runtime.linux-arm64.9.11.4210.nupkg.sha512",
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.ortools.runtime.linux-x64\\9.11.4210\\google.ortools.runtime.linux-x64.9.11.4210.nupkg.sha512",
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.ortools.runtime.osx-arm64\\9.11.4210\\google.ortools.runtime.osx-arm64.9.11.4210.nupkg.sha512",
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.ortools.runtime.osx-x64\\9.11.4210\\google.ortools.runtime.osx-x64.9.11.4210.nupkg.sha512",
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.ortools.runtime.win-x64\\9.11.4210\\google.ortools.runtime.win-x64.9.11.4210.nupkg.sha512",
+    "C:\\Users\\2022102020037\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512"
   ],
   "logs": []
 }
