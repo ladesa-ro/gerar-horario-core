@@ -8,7 +8,7 @@ namespace Sisgea.GerarHorario.Core;
 public class ProgramTest
 {
 
-    public static (IEnumerable<HorarioGerado>, GerarHorarioContext) MainTest()
+    public static (IEnumerable<HorarioGeradoAula>, GerarHorarioContext) MainTest()
     {
         // ====================================================
 
@@ -398,6 +398,11 @@ public class ProgramTest
         // ====================================================
         var contexto = new GerarHorarioContext(gerarHorarioOptions, iniciarTodasAsPropostasDeAula: true);
         var horarioGeradoEnumerator = Gerador.GerarHorario(gerarHorarioOptions);
+        //IEnumerable<HorarioGeradoAula> horarioGeradoAula = null;
+        var horariosGerados = new List<HorarioGeradoAula>();
+       // var lista = horarioGeradoAula.ToList();
+
+
         // ====================================================
 
         var limiteGeracao = 1;
@@ -413,10 +418,12 @@ public class ProgramTest
                 foreach (var turma in gerarHorarioOptions.Turmas)
                 {
                     Console.WriteLine($"Turma (Id={turma.Id}, Nome={turma.Nome ?? "Sem nome"})");
-
+                    
                     var turmaAulas = from aula in horarioGerado.Aulas
                                      where aula.TurmaId == turma.Id
                                      select aula;
+
+                 horariosGerados.AddRange(turmaAulas);
 
 
                     foreach (var aula in turmaAulas)
@@ -470,10 +477,6 @@ public class ProgramTest
                         }
 
                         Console.WriteLine($"- Dia: {dia} | Intervalo: {horariosDeAula[aula.IntervaloDeTempo]} | Professor: {diario.ProfessorId} | Diario: {diario.Id}");
-
-
-
-
                         diaAnterior = dia;
                     }
                     Console.WriteLine();
@@ -488,7 +491,7 @@ public class ProgramTest
             }
 
         }
-        return (horarioGeradoEnumerator, contexto);
+        return (horariosGerados, contexto);
     }
 }
 

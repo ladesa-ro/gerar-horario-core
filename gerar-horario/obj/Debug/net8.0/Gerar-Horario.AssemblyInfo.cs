@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gerar-Horario")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37584cf37f85a34ad0663cb6fb7f3e80831468b5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34f5867f0498847d44ae9e333effe94bb38cac9f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gerar-Horario")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gerar-Horario")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
