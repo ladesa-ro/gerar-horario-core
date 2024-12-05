@@ -1,5 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Sisgea.GerarHorario.Core.Dtos.Configuracoes;
+﻿using Sisgea.GerarHorario.Core.Dtos.Configuracoes;
 using Sisgea.GerarHorario.Core.Dtos.Entidades;
 using Sisgea.GerarHorario.Core.Dtos.HorarioGerado;
 
