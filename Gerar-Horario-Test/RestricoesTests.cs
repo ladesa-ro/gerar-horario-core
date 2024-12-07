@@ -5,13 +5,14 @@ using System.Security.Cryptography;
 
 public static class RestricoesTest
 {
-    public static void ProfessorNaoPodeTrabalharEmTresTurnosDiferentesTest(GerarHorarioContext contexto, IEnumerable<HorarioGeradoAula> horarioGerado)
+
+    //RESTRIÇÃO TEST: O professor não pode trabalhar 3 turnos e o professor não pode trabalhar de manhã e à noite.
+    public static void ProfessorNaoPodeTrabalharEmTresTurnosDiferentesTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
     {
         foreach (var professor in contexto.Options.Professores)
         {
             foreach (var diaSemanaIso in Enumerable.Range(contexto.Options.DiaSemanaInicio, contexto.Options.DiaSemanaFim))
             {
-
                 var propostasManha = from aula in horarioGerado
                                      where aula.ProfessorId == professor.Id
                                      && aula.DiaDaSemanaIso == diaSemanaIso
@@ -56,4 +57,67 @@ public static class RestricoesTest
         }
 
     }
+
+    static bool debugValor(GerarHorarioContext carro)
+    {
+        //Console.WriteLine($"-LA ELE Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloDeTempo} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
+        return true;
+    }
+
+    //RESTRIÇÃO TEST: Mínimo de 1h30 de almoço para o professor e turmas.
+    public static void HorarioAlmoçoTurmaTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
+    {
+        foreach (var turma in contexto.Options.Turmas)
+        {
+
+            var propostaAulaTurma = from proposta in horarioGerado
+                                        where (proposta.DiaDaSemanaIso == 2 || proposta.DiaDaSemanaIso == 4)
+                                            && proposta.TurmaId == turma.Id
+                                            && (
+                                                Intervalo.VerificarIntervalo(
+                                                    new Intervalo("11:30:00", "11:59:59"),
+                                                    contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioFim
+                                                )
+                                                || Intervalo.VerificarIntervalo(
+                                                    new Intervalo("13:00:00", "13:30:00"),
+                                                     contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioInicio
+                                                )
+                                            )
+                                        select proposta;
+
+            if (propostaAulaTurma.Count() > 2)
+            {
+                Assert.Fail("ERROR: HORARIO DE ALMOÇO TURMA ERROR");
+            }
+
+        }
+    }
+    public static void HorarioAlmoçoProfessorTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
+    {
+         foreach (var professor in contexto.Options.Professores)
+        {
+
+            var propostaAulaProfessor = from proposta in horarioGerado
+                                        where (proposta.DiaDaSemanaIso == 2 || proposta.DiaDaSemanaIso == 4)
+                                            && proposta.ProfessorId == professor.Id
+                                            && (
+                                                Intervalo.VerificarIntervalo(
+                                                    new Intervalo("11:30:00", "11:59:59"),
+                                                    contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioFim
+                                                )
+                                                || Intervalo.VerificarIntervalo(
+                                                    new Intervalo("13:00:00", "13:30:00"),
+                                                     contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioInicio
+                                                )
+                                            )
+                                        select proposta;
+
+            if (propostaAulaProfessor.Count() > 2)
+            {
+                Assert.Fail("ERROR: HORARIO DE ALMOÇO PROFESSOR ERROR");
+            }
+
+        }
+    }
+
 }
