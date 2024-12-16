@@ -20,7 +20,8 @@ namespace Gerar_Horario_Test
             //RestricoesTest.ProfessorNaoPodeTrabalharEmTresTurnosDiferentesTest(mainTestResult.Item1, mainTestResult.Item2);
           //  RestricoesTest.HorarioAlmoçoTurmaTest(mainTestResult.Item1, mainTestResult.Item2);
            // RestricoesTest.HorarioAlmoçoProfessorTest(mainTestResult.Item1, mainTestResult.Item2);
-            RestricoesTest.PRDTest(mainTestResult.Item1, mainTestResult.Item2);
+            //RestricoesTest.PRDTest(mainTestResult.Item1, mainTestResult.Item2);
+            RestricoesTest.EscolherTurnoProfessorTest(mainTestResult.Item1, mainTestResult.Item2);
         }
     }
 }

@@ -113,7 +113,7 @@ public static class RestricoesTest
 
         }
     }
-
+ //RESTRIÇÃO: Todo professor deve ter 1 dia sem aulas (PRD na segunda ou na sexta). // Permitir escolher o dia de PRD de um professor.
     public static void PRDTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
     {
         foreach (var professor in contexto.Options.Professores)
@@ -121,12 +121,37 @@ public static class RestricoesTest
             var propostaAulaProfessor = from proposta in horarioGerado
                                         where proposta.DiaDaSemanaIso == professor.DiaPRD
                                         && proposta.ProfessorId == professor.Id
-                                        select proposta.DiaDaSemanaIso;
+                                        select proposta;
 
             if (propostaAulaProfessor.Any())
             {
                 Assert.Fail($"ERROR: PROFESSOR TRABALHANDO NO SEU PRD \n Prova: Professor {professor.Id} esta trabalhando no dia {professor.DiaPRD}");
+            }
+        }
+    }
 
+    //RESTRIÇÃO: Permitir escolher dias e turnos de aula de um professor.
+    public static void EscolherTurnoProfessorTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
+    {
+        foreach (var professor in contexto.Options.Professores)
+        {
+            if (professor.DiaAulaEscolhido != 0)
+            {
+                System.Console.WriteLine("Testando o lançamento de aula do professor " + professor.Id);
+                var propostaAulaProfessor = from proposta in horarioGerado
+                                            where proposta.DiaDaSemanaIso == professor.DiaAulaEscolhido
+                                            && proposta.ProfessorId == professor.Id
+                                            && (
+                                                    Intervalo.VerificarIntervalo(
+                                                        new Intervalo(professor.IntervaloEscolhido.HorarioInicio, professor.IntervaloEscolhido.HorarioFim),
+                                                        contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioFim
+                                                    )
+                                                )
+                                            select proposta;
+                if (!propostaAulaProfessor.Any())
+                {
+                    Assert.Fail($"ERROR: ESCOLHER TURNO PROFESSOR");
+                }
             }
         }
     }

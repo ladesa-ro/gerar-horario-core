@@ -97,7 +97,7 @@ public class ProgramTest
                 ]
             ),*/
 
-             new(
+             /*new(
                 "4",
                 "2 PERIODO ADS",
                 [
@@ -121,7 +121,7 @@ public class ProgramTest
                     //
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),//SEXTA DAS 07:30 AS 12:00
                 ]
-            ),
+            ),*/
         };
 
         var professores = new Professor[] {

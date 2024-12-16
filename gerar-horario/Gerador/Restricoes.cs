@@ -383,9 +383,20 @@ public class Restricoes
         }
 
     }
-
+    ///<summary>
+    /// RESTRIÇÃO: Permitir escolher dias e turnos de aula de um professor.
+    ///</summary>
     public static void AgruparDisciplinasParametro(GerarHorarioContext contexto, string professorId, int diaSemana, Intervalo intervalos)
     {
+        foreach (var professor in contexto.Options.Professores)
+        {
+            if (professor.Id == professorId)
+            {
+                professor.IntervaloEscolhido = intervalos;
+                professor.DiaAulaEscolhido = diaSemana;
+            }
+        }
+
         var propostasExcluir = from proposta in contexto.TodasAsPropostasDeAula
                                where proposta.ProfessorId == professorId
                                && proposta.DiaSemanaIso != diaSemana
@@ -411,7 +422,6 @@ public class Restricoes
     ///<summary>
     /// RESTRIÇÃO: Todo professor deve ter 1 dia sem aulas (PRD na segunda ou na sexta).
     ///</summary>
-    ///
     public static void PadronizarPRD(GerarHorarioContext contexto)
     {
         foreach (var professor in contexto.Options.Professores)
@@ -435,6 +445,10 @@ public class Restricoes
 
         }
     }
+
+    ///<summary>
+    /// RESTRIÇÃO: Permitir escolher o dia de PRD de um professor.
+    ///</summary>
     public static void EspecificarPRD(GerarHorarioContext contexto, string idProfessor, int DiaSemanaEscolhido)
     {
         foreach (var professor in contexto.Options.Professores)

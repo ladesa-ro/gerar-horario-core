@@ -49,10 +49,8 @@ public class Gerador
         Restricoes.DiferencaTurnos12Horas(contexto);
 
         // ======================================
-        // RESTRIÇÃO: Diário: respeitar limite de quantidade máxima na semana.
-        // Restricoes.AgruparDisciplinasPadronizado(contexto);
-        Restricoes.AgruparDisciplinasParametro(contexto, "2", 1, new("08:00", "12:00"));
-        //Restricoes.AgruparDisciplinasParametro2(contexto, ["diario:1_3", "diario:1_1"], [4, 3], [2, 2]);
+        /// RESTRIÇÃO: Permitir escolher dias e turnos de aula de um professor.
+        Restricoes.AgruparDisciplinasParametro(contexto, "7", 2, new("13:50", "17:30"));
 
         // ====================================================================
         // RESTRIÇÃO: Todo professor deve ter 1 dia sem aulas (PRD na segunda ou na sexta).
