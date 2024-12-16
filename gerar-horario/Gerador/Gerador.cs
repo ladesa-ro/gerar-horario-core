@@ -51,19 +51,12 @@ public class Gerador
         // ======================================
         // RESTRIÇÃO: Diário: respeitar limite de quantidade máxima na semana.
         // Restricoes.AgruparDisciplinasPadronizado(contexto);
-        /*Restricoes.AgruparDisciplinasParametro(contexto, ["diario:1_1", "diario:1_2", "diario:1_3"], [1, 2, 3],
-            [
-                new("07:30", "11:09:59"),
-                new("07:30", "09:59:59"),
-                new("07:30", "11:09:59"),
-
-            ]
-        );*/
+        Restricoes.AgruparDisciplinasParametro(contexto, "2", 1, new("08:00", "12:00"));
         //Restricoes.AgruparDisciplinasParametro2(contexto, ["diario:1_3", "diario:1_1"], [4, 3], [2, 2]);
 
         // ====================================================================
         // RESTRIÇÃO: Todo professor deve ter 1 dia sem aulas (PRD na segunda ou na sexta).
-        Restricoes.PadronizarPRD(contexto);
+         Restricoes.PadronizarPRD(contexto);
 
         // ====================================================================
         // RESTRIÇÃO: Permitir escolher o dia de disponibilidade (PRD) de um professor.

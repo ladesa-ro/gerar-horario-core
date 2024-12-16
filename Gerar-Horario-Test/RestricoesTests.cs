@@ -58,12 +58,6 @@ public static class RestricoesTest
 
     }
 
-    static bool debugValor(GerarHorarioContext carro)
-    {
-        //Console.WriteLine($"-LA ELE Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloDeTempo} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
-        return true;
-    }
-
     //RESTRIÇÃO TEST: Mínimo de 1h30 de almoço para o professor e turmas.
     public static void HorarioAlmoçoTurmaTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
     {
@@ -189,4 +183,20 @@ public static class RestricoesTest
         }
     }
 
+    public static void PRDTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
+    {
+        foreach (var professor in contexto.Options.Professores)
+        {
+            var propostaAulaProfessor = from proposta in horarioGerado
+                                        where proposta.DiaDaSemanaIso == professor.DiaPRD
+                                        && proposta.ProfessorId == professor.Id
+                                        select proposta.DiaDaSemanaIso;
+
+            if (propostaAulaProfessor.Any())
+            {
+                Assert.Fail($"ERROR: PROFESSOR TRABALHANDO NO SEU PRD \n Prova: Professor {professor.Id} esta trabalhando no dia {professor.DiaPRD}");
+
+            }
+        }
+    }
 }
