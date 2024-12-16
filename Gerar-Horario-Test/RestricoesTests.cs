@@ -58,12 +58,6 @@ public static class RestricoesTest
 
     }
 
-    static bool debugValor(GerarHorarioContext carro)
-    {
-        //Console.WriteLine($"-LA ELE Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloDeTempo} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
-        return true;
-    }
-
     //RESTRIÇÃO TEST: Mínimo de 1h30 de almoço para o professor e turmas.
     public static void HorarioAlmoçoTurmaTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
     {
@@ -71,19 +65,19 @@ public static class RestricoesTest
         {
 
             var propostaAulaTurma = from proposta in horarioGerado
-                                        where (proposta.DiaDaSemanaIso == 2 || proposta.DiaDaSemanaIso == 4)
-                                            && proposta.TurmaId == turma.Id
-                                            && (
-                                                Intervalo.VerificarIntervalo(
-                                                    new Intervalo("11:30:00", "11:59:59"),
-                                                    contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioFim
-                                                )
-                                                || Intervalo.VerificarIntervalo(
-                                                    new Intervalo("13:00:00", "13:30:00"),
-                                                     contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioInicio
-                                                )
+                                    where (proposta.DiaDaSemanaIso == 2 || proposta.DiaDaSemanaIso == 4)
+                                        && proposta.TurmaId == turma.Id
+                                        && (
+                                            Intervalo.VerificarIntervalo(
+                                                new Intervalo("11:30:00", "11:59:59"),
+                                                contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioFim
                                             )
-                                        select proposta;
+                                            || Intervalo.VerificarIntervalo(
+                                                new Intervalo("13:00:00", "13:30:00"),
+                                                 contexto.Options.HorariosDeAula[proposta.IntervaloDeTempo].HorarioInicio
+                                            )
+                                        )
+                                    select proposta;
 
             if (propostaAulaTurma.Count() > 2)
             {
@@ -94,7 +88,7 @@ public static class RestricoesTest
     }
     public static void HorarioAlmoçoProfessorTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
     {
-         foreach (var professor in contexto.Options.Professores)
+        foreach (var professor in contexto.Options.Professores)
         {
 
             var propostaAulaProfessor = from proposta in horarioGerado
@@ -120,4 +114,20 @@ public static class RestricoesTest
         }
     }
 
+    public static void PRDTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
+    {
+        foreach (var professor in contexto.Options.Professores)
+        {
+            var propostaAulaProfessor = from proposta in horarioGerado
+                                        where proposta.DiaDaSemanaIso == professor.DiaPRD
+                                        && proposta.ProfessorId == professor.Id
+                                        select proposta.DiaDaSemanaIso;
+
+            if (propostaAulaProfessor.Any())
+            {
+                Assert.Fail($"ERROR: PROFESSOR TRABALHANDO NO SEU PRD \n Prova: Professor {professor.Id} esta trabalhando no dia {professor.DiaPRD}");
+
+            }
+        }
+    }
 }

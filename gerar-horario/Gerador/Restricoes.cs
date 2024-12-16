@@ -249,11 +249,7 @@ public class Restricoes
     ///</summary>
     ///
 
-    static bool debugValor(PropostaDeAula carro)
-    {
-        Console.WriteLine($"Debug valor: {carro.ProfessorId}");
-        return true;
-    }
+
     public static void ProfessorNaoPodeTrabalharEmTresTurnosDiferentes(GerarHorarioContext contexto)
     {
         foreach (var professor in contexto.Options.Professores)
@@ -276,7 +272,7 @@ public class Restricoes
                                      proposta.DiaSemanaIso == diaSemanaIso
                                      &&
                                      proposta.IntervaloIndex >= 5 && proposta.IntervaloIndex <= 9
-                                    
+
                                      select proposta.ModelBoolVar;
 
                 var propostasNoite = from proposta in contexto.TodasAsPropostasDeAula
@@ -286,7 +282,7 @@ public class Restricoes
                                      proposta.DiaSemanaIso == diaSemanaIso
                                      &&
                                      proposta.IntervaloIndex >= 10 && proposta.IntervaloIndex <= 14
-                                     
+
                                      select proposta.ModelBoolVar;
 
                 /*
@@ -336,7 +332,7 @@ public class Restricoes
 
                     contexto.Model.AddAllowedAssignments([alumgaAulaManha, alumgaAulaTarde, alumgaAulaNoite]).AddTuples(possibilidadesPermitidas);
                 }
-               
+
             }
         }
     }
@@ -345,7 +341,11 @@ public class Restricoes
     /// RESTRIÇÃO: A diferença entre os turnos de trabalho do professor deve ser de 12 horas.
     ///</summary>
 
-
+    static bool debugValor(PropostaDeAula carro)
+    {
+        // Console.WriteLine($"- LA ELE Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloIndex} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
+        return true;
+    }
     public static void DiferencaTurnos12Horas(GerarHorarioContext contexto)
     {
         foreach (var diaSemanaIso in Enumerable.Range(contexto.Options.DiaSemanaInicio, contexto.Options.DiaSemanaFim - 1))
@@ -372,6 +372,7 @@ public class Restricoes
                                                              proposta.ProfessorId == propostaNoite.ProfessorId
                                                                    && proposta.IntervaloIndex >= 0 && proposta.IntervaloIndex <= 4//SELECIONA OS INTERVALOS DE 0 A 4
                                                                    && proposta.IntervaloIndex <= propostaNoite.IntervaloIndex - 10//DIMUI 10 DO ULTIMO INTERVALO QUE SERA IGUAL AO INTERVALO QUE DEVERA SER REMOVIDO
+                                                                   && debugValor(proposta)
                                                              select proposta.ModelBoolVar;
 
                     var negatedVariables = propostasConflitantesManhaSeguinte.Select(v => v.Not()).ToArray();
@@ -383,203 +384,46 @@ public class Restricoes
 
     }
 
-    //PADRONALIZADO
-    public static void AgruparDisciplinasPadronizado(GerarHorarioContext contexto)
+    public static void AgruparDisciplinasParametro(GerarHorarioContext contexto, string professorId, int diaSemana, Intervalo intervalos)
     {
-        foreach (var turma in contexto.Options.Turmas)
-        {
-            var horariosUsados = new HashSet<(int DiaSemanaIso, int IntervaloIndex)>();
-            var propostasEscolhidasFinais = new List<PropostaDeAula>();
+        var propostasExcluir = from proposta in contexto.TodasAsPropostasDeAula
+                               where proposta.ProfessorId == professorId
+                               && proposta.DiaSemanaIso != diaSemana
+                               select proposta.ModelBoolVar;
 
+        var propostasEscolhidas = from proposta in contexto.TodasAsPropostasDeAula
+                                  where proposta.ProfessorId != professorId
+                                  && proposta.DiaSemanaIso == diaSemana
+                                  && Intervalo.VerificarIntervalo(
+                                                          new Intervalo(intervalos.HorarioInicio, intervalos.HorarioFim),
+                                                          proposta.Intervalo.HorarioInicio
+                                                      )
+                                  select proposta.ModelBoolVar;
 
-            foreach (var diario in turma.DiariosDaTurma)
-            {
+        var negatedVariables = propostasExcluir.Select(v => v.Not()).ToArray();
+        contexto.Model.AddBoolAnd(negatedVariables);
 
-
-                Console.WriteLine("\n");
-
-                int diaSorteado = 0;
-                var consecutivas = new List<PropostaDeAula>();
-                Random sorteio = new Random();
-
-
-                var todasPropostas = from proposta in contexto.TodasAsPropostasDeAula
-                                     where proposta.TurmaId == turma.Id
-                                     && proposta.DiarioId == diario.Id
-                                     select proposta;
-
-                if (todasPropostas.Any())
-                {
-                    while (consecutivas.Count < diario.QuantidadeMaximaSemana)
-                    {
-
-                    }
-
-                    //SORTEAR O DIA 
-                    var diasDaSemana = todasPropostas.Select(p => p.DiaSemanaIso).Distinct().ToList();
-                    int indiceSorteado = sorteio.Next(diasDaSemana.Count);
-                    diaSorteado = diasDaSemana[indiceSorteado];
-                    Console.WriteLine($"Dia sorteado: {diaSorteado}");
-
-
-                    var propostasSorteadas = from proposta in todasPropostas
-                                             where proposta.TurmaId == turma.Id
-                                             && proposta.DiarioId == diario.Id
-                                             && proposta.DiaSemanaIso == diaSorteado
-                                             select proposta;
-
-                    int skip = sorteio.Next(propostasSorteadas.Count() - diario.QuantidadeMaximaSemana);
-
-
-                    var propostasFinais = propostasSorteadas.Skip(skip).Take(diario.QuantidadeMaximaSemana).ToList();
-
-                    foreach (var carro in propostasFinais)
-                    {
-                        if (!horariosUsados.Contains((carro.DiaSemanaIso, carro.IntervaloIndex)))//SE NAO CONTEM NOS HORARIOS USADOS O DIA E INTERVALO SORTEADO
-                        {
-                            Console.WriteLine($"- Dia: {carro.DiaSemanaIso} | Intervalo: {carro.IntervaloIndex} | Professor: {carro.ProfessorId} | Diario: {carro.DiarioId}");
-                            horariosUsados.Add((carro.DiaSemanaIso, carro.IntervaloIndex));
-
-
-                        }
-
-
-                    }
-                    skip++;
-                }
-
-            }
-
-        }
-}
-
-
-    public static void AgruparDisciplinasParametro2(GerarHorarioContext contexto, string[] diarioId, int[] diaSemana, int[] quantidadeDesejada)
-    {
-        var horariosUsados = new HashSet<(int DiaSemanaIso, int IntervaloIndex)>();
-        var consecutivas = new List<PropostaDeAula>();
-        var propostas = from propostaAula in contexto.TodasAsPropostasDeAula
-                        select propostaAula;
-
-
-        for (int i = 0; i < diarioId.Length; i++)
-        {
-            var propostasDoDiario = from propostaAula in contexto.TodasAsPropostasDeAula
-                                    where propostaAula.DiarioId == diarioId[i]
-                                    && propostaAula.DiaSemanaIso == diaSemana[i]
-                                    select propostaAula;
-
-            int quantidadeDeAulas = contexto.Options.DiarioFindById(diarioId[i]).QuantidadeMaximaSemana;
-            var propostasSkipadas = new List<PropostaDeAula>();
-
-
-            bool validacao = false;
-
-
-
-            while (!validacao)
-            {
-                Random sorteio = new Random();
-                int skip = sorteio.Next(propostasDoDiario.Count() - quantidadeDeAulas);
-                System.Console.WriteLine(propostasDoDiario.Count());
-                System.Console.WriteLine("O skip foi de: " + skip);
-
-                for (int j = 0; j < quantidadeDesejada[i]; j++)
-                {
-                    propostasSkipadas.AddRange(propostasDoDiario.Skip(skip).Take(1).ToList());
-                    skip++;
-                }
-
-                foreach (var proposta in propostasSkipadas)
-                {
-                    System.Console.WriteLine("Diario CONSECUTIVO: " + proposta.DiarioId + " | Dia: " + proposta.DiaSemanaIso + " Intervalo: " + proposta.IntervaloIndex);
-
-                    var primeiraProposta = propostasSkipadas.First();
-                    if (!horariosUsados.Contains((proposta.DiaSemanaIso, proposta.IntervaloIndex)))
-                    {
-                        if (primeiraProposta.IntervaloIndex + quantidadeDesejada[i] - 1 <= 4 || primeiraProposta.IntervaloIndex + quantidadeDesejada[i] - 1 >= 6)
-                        {
-                            System.Console.WriteLine("Diario CONSECUTIVO PASSADAS: " + proposta.DiarioId + " | Dia: " + proposta.DiaSemanaIso + " Intervalo: " + proposta.IntervaloIndex);
-
-                            consecutivas.Add(proposta);
-                            horariosUsados.Add((proposta.DiaSemanaIso, proposta.IntervaloIndex));
-                            validacao = true;
-                        }
-                    }
-                }
-            }
-        }
-        foreach (var proposta in propostas)
-        {
-            if (!consecutivas.Contains(proposta))
-            {
-                contexto.Model.Add(proposta.ModelBoolVar == 0);
-            }
-        }
-
+        var negatedVariables1 = propostasEscolhidas.Select(v => v.Not()).ToArray();
+        contexto.Model.AddBoolAnd(negatedVariables1);
     }
-    public static void AgruparDisciplinasParametro(GerarHorarioContext contexto, string[] diarioId, int[] diaSemana, Intervalo[] intervalos)
-    {
-        var consecutivas = new List<PropostaDeAula>();
-        var horariosUsados = new HashSet<(int DiaSemanaIso, int IntervaloIndex)>();
 
-
-        var propostas = from propostaAula in contexto.TodasAsPropostasDeAula
-                        select propostaAula;
-
-
-
-        for (int i = 0; i < diarioId.Length; i++)
-        {
-            var propostasDoDiario = from propostaAula in contexto.TodasAsPropostasDeAula
-                                    where propostaAula.DiarioId == diarioId[i]
-                                    && propostaAula.DiaSemanaIso == diaSemana[i]
-                                    &&
-                                    Intervalo.VerificarIntervalo(intervalos[i], propostaAula.Intervalo.HorarioFim)
-                                    select propostaAula;
-
-
-            int quantidadeDeAulas = contexto.Options.DiarioFindById(diarioId[i]).QuantidadeMaximaSemana;
-
-
-
-
-            foreach (var proposta in propostasDoDiario)
-            {
-                if (propostasDoDiario.Count() <= quantidadeDeAulas)
-                {
-                    if (!horariosUsados.Contains((proposta.DiaSemanaIso, proposta.IntervaloIndex)))
-                    {
-                        consecutivas.Add(proposta);
-                        horariosUsados.Add((proposta.DiaSemanaIso, proposta.IntervaloIndex));
-
-                    }
-                }
-            }
-        }
-
-        foreach (var proposta in propostas)
-        {
-            if (!consecutivas.Contains(proposta))
-            {
-                contexto.Model.Add(proposta.ModelBoolVar == 0);
-            }
-        }
-
-    }
 
     ///<summary>
     /// RESTRIÇÃO: Todo professor deve ter 1 dia sem aulas (PRD na segunda ou na sexta).
     ///</summary>
+    ///
     public static void PadronizarPRD(GerarHorarioContext contexto)
     {
         foreach (var professor in contexto.Options.Professores)
         {
-          
-            int[] DiaSemanaIsoPRD = {1, 5};
+
+            int[] DiaSemanaIsoPRD = { 1, 5 };
             Random sorteio = new Random();
             int indiceSorteado = sorteio.Next(DiaSemanaIsoPRD.Length);
             int diaSorteado = DiaSemanaIsoPRD[indiceSorteado];
+
+            professor.DiaPRD = diaSorteado;
+            //System.Console.WriteLine("O PRD do professor " + professor.Id + " sera no dia " + diaSorteado);
 
             var propostasSorteada = from proposta in contexto.TodasAsPropostasDeAula
                                     where proposta.ProfessorId == professor.Id
@@ -593,16 +437,22 @@ public class Restricoes
     }
     public static void EspecificarPRD(GerarHorarioContext contexto, string idProfessor, int DiaSemanaEscolhido)
     {
-        
-            var propostasSorteada = from proposta in contexto.TodasAsPropostasDeAula
-                                    where proposta.ProfessorId == idProfessor
-                                    && proposta.DiaSemanaIso == DiaSemanaEscolhido
-                                    select proposta.ModelBoolVar;
+        foreach (var professor in contexto.Options.Professores)
+        {
+            if (professor.Id == idProfessor)
+            {
+                professor.DiaPRD = DiaSemanaEscolhido;
+            }
+        }
+        var propostasSorteada = from proposta in contexto.TodasAsPropostasDeAula
+                                where proposta.ProfessorId == idProfessor
+                                && proposta.DiaSemanaIso == DiaSemanaEscolhido
+                                select proposta.ModelBoolVar;
 
 
         Console.WriteLine("o PRD do professor " + idProfessor + " foi escolhido para ser no " + DiaSemanaEscolhido);
         var negatedVariables = propostasSorteada.Select(v => v.Not()).ToArray();
-            contexto.Model.AddBoolAnd(negatedVariables);
+        contexto.Model.AddBoolAnd(negatedVariables);
     }
 
 }
