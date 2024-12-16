@@ -86,6 +86,75 @@ public static class RestricoesTest
 
         }
     }
+
+    public static void MinimoDozeHorasEntreTurnosProfesssorTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
+    {
+        int[] horarioNoite = [10, 11, 12, 13];
+
+        //Console.WriteLine("==========");
+
+
+        foreach (var professor in contexto.Options.Professores)
+        {
+            foreach (var diaSemanIso in Enumerable.Range(contexto.Options.DiaSemanaInicio, contexto.Options.DiaSemanaFim - 1))
+            {
+
+
+                var propostaAulaNoiteProfessor = (from proposta in horarioGerado
+                                                  where (proposta.DiaDaSemanaIso == diaSemanIso)
+                                                  && horarioNoite.Contains(proposta.IntervaloDeTempo)
+                                                  && proposta.ProfessorId == professor.Id
+                                                  orderby proposta.DiaDaSemanaIso descending
+                                                  select proposta).FirstOrDefault();
+
+
+                if (propostaAulaNoiteProfessor is null)
+                {
+                    //Console.WriteLine("Professor não deu aula a noite");
+                    continue;
+                }
+
+                var propostaAulaDiaProfessor = (from proposta in horarioGerado
+                                                where (proposta.DiaDaSemanaIso == diaSemanIso + 1)
+                                                && proposta.ProfessorId == professor.Id
+                                                select proposta).FirstOrDefault();
+
+                if (propostaAulaDiaProfessor is null)
+                {
+                    //Console.WriteLine("Professor não deu aula no proximo dia");
+
+                    continue;
+                }
+
+
+                if (propostaAulaNoiteProfessor.IntervaloDeTempo - 9 > propostaAulaDiaProfessor.IntervaloDeTempo)
+                {
+                    Assert.Fail("ERROR: INTERVALO DE 12H NÃO RESPEITADO ERROR");
+                }
+                /* 
+                                Console.WriteLine(propostaAulaNoiteProfessor);
+                                Console.WriteLine(propostaAulaDiaProfessor);
+
+
+                 */
+
+
+
+                /* 
+                    10 => 1
+                    11 => 2
+                    12 => 3
+                    13 => 4
+                 */
+            }
+           //  Console.WriteLine("----------------------");
+
+        }
+
+    }
+
+
+
     public static void HorarioAlmoçoProfessorTest(IEnumerable<HorarioGeradoAula> horarioGerado, GerarHorarioContext contexto)
     {
         foreach (var professor in contexto.Options.Professores)

@@ -109,17 +109,17 @@ public class ProgramTest
                 ],
                 [
                     //
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),//SEGUNDA DAS 13:00 AS 17:30
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),//SEGUNDA DAS 13:00 AS 17:30
                     //
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),//TERCA DAS 07:30 AS 12:00 E AS 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),//TERCA
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),//TERCA DAS 07:30 AS 12:00 E AS 13:00 AS 17:30
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),//TERCA
                     //
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),//QUARTA DAS 07:30 AS 12:00
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),//QUARTA DAS 07:30 AS 12:00
                     //
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),//QUINTA DAS 07:30 AS 12:00 E 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),//QUINTA
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),//QUINTA DAS 07:30 AS 12:00 E 13:00 AS 17:30
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),//QUINTA
                     //
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),//SEXTA DAS 07:30 AS 12:00
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),//SEXTA DAS 07:30 AS 12:00
                 ]
             ),*/
         };
@@ -135,11 +135,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "11:59:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -152,11 +152,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -169,11 +169,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -186,11 +186,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -203,11 +203,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -220,11 +220,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -237,11 +237,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -254,11 +254,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
             new(
@@ -271,11 +271,11 @@ public class ProgramTest
                     new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "17:29:59")),
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "17:29:59")),
 
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "22:29:59")),
+                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "22:29:59")),
                 ]
             ),
              new(
@@ -369,7 +369,7 @@ public class ProgramTest
             new("10:20", "11:09:59"),//3
             new("11:10", "11:59:59"),//4
             // =====================
-          //  new("12:00", "12:59"),//RECREIO 
+          
             // =====================
             new("13:00", "13:49:59"),//5
             new("13:50", "14:39:59"),//6
@@ -378,12 +378,15 @@ public class ProgramTest
             new("15:50", "16:39:59"),//8
             new("16:40", "17:29:59"),//9
             // =====================
-            new("19:00", "19:49:59"),//10
+
+            // =====================
+            new("19:00", "19:49:59"),//10 
+            
             new("19:50", "20:39:59"),//11
-            new("20:40", "21:29:59"),//12
+            // new("20:40", "20:50"),// INTERVALO
+            new("20:50", "21:39:59"),//12
             //
-            new("21:50", "22:39:59"),//13
-            new("22:40", "23:29:59"),//14
+            new("21:40", "22:29:59"),//13
         };
 
         var gerarHorarioOptions = new GerarHorarioOptions(
@@ -399,7 +402,7 @@ public class ProgramTest
         var horarioGeradoEnumerator = Gerador.GerarHorario(gerarHorarioOptions);
         //IEnumerable<HorarioGeradoAula> horarioGeradoAula = null;
         var horariosGerados = new List<HorarioGeradoAula>();
-       // var lista = horarioGeradoAula.ToList();
+        // var lista = horarioGeradoAula.ToList();
 
 
         // ====================================================
@@ -417,12 +420,12 @@ public class ProgramTest
                 foreach (var turma in gerarHorarioOptions.Turmas)
                 {
                     Console.WriteLine($"Turma (Id={turma.Id}, Nome={turma.Nome ?? "Sem nome"})");
-                    
+
                     var turmaAulas = from aula in horarioGerado.Aulas
                                      where aula.TurmaId == turma.Id
                                      select aula;
 
-                 horariosGerados.AddRange(turmaAulas);
+                    horariosGerados.AddRange(turmaAulas);
 
 
                     foreach (var aula in turmaAulas)
