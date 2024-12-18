@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gerar-Horario", "Gerar-Hora
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gerar-Horario-Test", "..\Gerar-Horario-Test\Gerar-Horario-Test.csproj", "{E298B0CA-14AE-42AA-93D1-22B3406A95E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerarHorarioService", "..\GerarHorarioService\GerarHorarioService.csproj", "{1ED7DCCE-BB80-460B-8DA5-C31C3C087692}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E298B0CA-14AE-42AA-93D1-22B3406A95E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED7DCCE-BB80-460B-8DA5-C31C3C087692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED7DCCE-BB80-460B-8DA5-C31C3C087692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED7DCCE-BB80-460B-8DA5-C31C3C087692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED7DCCE-BB80-460B-8DA5-C31C3C087692}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
