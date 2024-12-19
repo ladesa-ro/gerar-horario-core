@@ -1,13 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
-    <PropertyGroup>
+    <PropertyGroup >
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>dotnet-GerarHorarioService-2607c67c-71fc-4e83-8e51-d6496de61df8</UserSecretsId>
     </PropertyGroup>
 
+    <ItemGroup Label="Dependencies">
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+        <PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+    </ItemGroup>
+
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1"/>
+      <ProjectReference Include="..\gerar-horario\Gerar-Horario.csproj" />
     </ItemGroup>
 </Project>
