@@ -16,4 +16,9 @@ public record Turma
         DiariosDaTurma = diariosDaTurma;
         Disponibilidades = disponibilidades;
     }
+
+    public Turma()
+    {
+
+    }
 }

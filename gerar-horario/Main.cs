@@ -5,17 +5,20 @@ namespace Sisgea.GerarHorario.Core;
 
 public class Program
 {
-
-    public static void Main()
+    public static Turma[] turmas;
+    public static async Task Main()
     {
         // ====================================================
 
-        var turmas = new Turma[] {
+        await ConsumirAPI();
+        foreach (var item in ProgramAPI.Program.Dados)
+        {
+            turmas = new Turma[] {
             new(
-                "1",//TURMA
-                "1A INFORMATICA",//NOME DA TURMA
+                item.Diario.Turma.Id,//TURMA
+                item.Diario.Turma.NomeTurma(item.Diario.Turma.Periodo, item.Diario.Turma.Curso.Nome),//NOME DA TURMA
                 [
-                    new Diario (Id: "diario:1_1", TurmaId: "turma:1", ProfessorId:  "1", DisciplinaId: "disciplina:1", QuantidadeMaximaSemana: 2),//SOCIOLOGIA
+                    new Diario (Id: item.Diario.Id, TurmaId: item.Diario.Turma.Id, ProfessorId:  item.Perfil.Id, DisciplinaId: item.Diario.Disciplina.Id, QuantidadeMaximaSemana: (item.Diario.Disciplina.CargaHoraria/ 40)),//SOCIOLOGIA
                     new Diario (Id: "diario:1_2", TurmaId: "turma:1", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 1),//QUIMICA
                     new Diario (Id: "diario:1_3", TurmaId: "turma:1", ProfessorId: "3", DisciplinaId: "disciplina:3", QuantidadeMaximaSemana: 2),//ESPANHOL
                     new Diario (Id: "diario:1_4", TurmaId: "turma:1", ProfessorId: "4", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 3),//PORTUGUES
@@ -46,96 +49,14 @@ public class Program
                     //
                     new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("13:00", "17:29:59")),//O 1A INFORMATICA TERA AULA NA SEXTA DAS 13:00 AS 17:30
                 ]
-            ),
-
-           /* new(
-                "2",
-                "1B INFORMATICA",
-                [
-                    new Diario (Id: "diario:2_1", TurmaId: "turma:2", ProfessorId: "2", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 1),
-                    new Diario (Id: "diario:2_3", TurmaId: "turma:2", ProfessorId: "1", DisciplinaId: "disciplina:1", QuantidadeMaximaSemana: 3),
-                    new Diario (Id: "diario:2_2", TurmaId: "turma:2", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 2),
-                ],
-                [
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("13:00", "17:29:59")),//SEGUNDA DAS 13:00 AS 17:30
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("07:30", "11:59:59")),//TERCA DAS 07:30 AS 12:00 E AS 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("13:00", "17:29:59")),//TERCA
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("07:30", "11:59:59")),//QUARTA DAS 07:30 AS 12:00
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("07:30", "11:59:59")),//QUINTA DAS 07:30 AS 12:00 E 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("13:00", "17:29:59")),//QUINTA
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("07:30", "11:59:59")),//SEXTA DAS 07:30 AS 12:00
-                ]
-            ),
-
-             new(
-                "3",
-                "1 PERIODO ADS",
-                [
-                    new Diario (Id: "diario:3_1", TurmaId: "turma:3", ProfessorId: "2", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 1),
-                    new Diario (Id: "diario:3_3", TurmaId: "turma:3", ProfessorId: "1", DisciplinaId: "disciplina:1", QuantidadeMaximaSemana: 3),
-                    new Diario (Id: "diario:3_2", TurmaId: "turma:3", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 2),
-                ],
-                [
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),//SEGUNDA DAS 13:00 AS 17:30
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),//TERCA DAS 07:30 AS 12:00 E AS 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),//TERCA
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),//QUARTA DAS 07:30 AS 12:00
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),//QUINTA DAS 07:30 AS 12:00 E 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),//QUINTA
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),//SEXTA DAS 07:30 AS 12:00
-                ]
-            ),*/
-
-            /* new(
-                "4",
-                "2 PERIODO ADS",
-                [
-                    new Diario (Id: "diario:4_1", TurmaId: "turma:4", ProfessorId:  "1", DisciplinaId: "disciplina:1", QuantidadeMaximaSemana: 2),//SOCIOLOGIA
-                    new Diario (Id: "diario:4_2", TurmaId: "turma:4", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 1),//QUIMICA
-                    new Diario (Id: "diario:4_3", TurmaId: "turma:4", ProfessorId: "3", DisciplinaId: "disciplina:3", QuantidadeMaximaSemana: 2),//ESPANHOL
-                    new Diario (Id: "diario:4_4", TurmaId: "turma:4", ProfessorId: "4", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 3),//PORTUGUES
-                    new Diario (Id: "diario:4_5", TurmaId: "turma:4", ProfessorId: "5", DisciplinaId: "disciplina:5", QuantidadeMaximaSemana: 2),//HISTÓRIA
-                    new Diario (Id: "diario:4_6", TurmaId: "turma:4", ProfessorId: "6", DisciplinaId: "disciplina:6", QuantidadeMaximaSemana: 1),//FILOSOFIA
-                    new Diario (Id: "diario:4_7", TurmaId: "turma:4", ProfessorId: "7", DisciplinaId: "disciplina:7", QuantidadeMaximaSemana: 4),//REDES
-                    new Diario (Id: "diario:4_8", TurmaId: "turma:4", ProfessorId: "8", DisciplinaId: "disciplina:8", QuantidadeMaximaSemana: 4),//PW
-                    new Diario (Id: "diario:4_9", TurmaId: "turma:4", ProfessorId: "9", DisciplinaId: "disciplina:9", QuantidadeMaximaSemana: 3),//MATEMATICA
-                    new Diario (Id: "diario:4_10", TurmaId: "turma:4", ProfessorId: "10", DisciplinaId: "disciplina:10", QuantidadeMaximaSemana: 2),//BD
-                    new Diario (Id: "diario:4_11", TurmaId: "turma:4", ProfessorId: "11", DisciplinaId: "disciplina:11", QuantidadeMaximaSemana: 2),//ED. FISICA 
-                    new Diario (Id: "diario:4_12", TurmaId: "turma:4", ProfessorId: "12", DisciplinaId: "disciplina:12", QuantidadeMaximaSemana: 2),//EMPREENDEDORISMO
-                    new Diario (Id: "diario:4_13", TurmaId: "turma:4", ProfessorId: "13", DisciplinaId: "disciplina:13", QuantidadeMaximaSemana: 1), //SST
-                    new Diario (Id: "diario:4_14", TurmaId: "turma:4", ProfessorId: "14", DisciplinaId: "disciplina:14", QuantidadeMaximaSemana: 3), //PDS
-                    new Diario (Id: "diario:4_15", TurmaId: "turma:4", ProfessorId: "15", DisciplinaId: "disciplina:15", QuantidadeMaximaSemana: 1),//FISICA
-                ],
-                [
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("19:00", "23:29:59")),//SEGUNDA DAS 13:00 AS 17:30
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),//TERCA DAS 07:30 AS 12:00 E AS 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.TERCA, new Intervalo("19:00", "23:29:59")),//TERCA
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.QUARTA, new Intervalo("19:00", "23:29:59")),//QUARTA DAS 07:30 AS 12:00
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),//QUINTA DAS 07:30 AS 12:00 E 13:00 AS 17:30
-                    new DisponibilidadeDia(DiaSemanaIso.QUINTA, new Intervalo("19:00", "23:29:59")),//QUINTA
-                    //
-                    new DisponibilidadeDia(DiaSemanaIso.SEXTA, new Intervalo("19:00", "23:29:59")),//SEXTA DAS 07:30 AS 12:00
-                ]
-            ),*/
-        };
+            )
+            };
+        }
+        
 
         var professores = new Professor[] {
             new(
-                "1",
+                "26cda49f-1254-4659-91bc-c70068d17dd4",
                 "Danilo",
                 [
                     new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("13:00", "17:29:59")),
@@ -475,8 +396,10 @@ public class Program
                         {
                             Console.WriteLine("");
                         }
+                     
+                            Console.WriteLine($"- Dia: {dia} | Intervalo: {horariosDeAula[aula.IntervaloDeTempo]} | Professor: {diario.ProfessorId} | Diario: {diario.Id}");
 
-                        Console.WriteLine($"- Dia: {dia} | Intervalo: {horariosDeAula[aula.IntervaloDeTempo]} | Professor: {diario.ProfessorId} | Diario: {diario.Id}");
+                        
 
 
 
@@ -495,6 +418,13 @@ public class Program
             }
 
         }
+    }
+
+    static async Task ConsumirAPI()
+    {
+        await TurmaController.GetTurmas();//PEGA TODOS OS ESTADOS
+       
+        
     }
 }
 
