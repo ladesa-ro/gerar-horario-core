@@ -18,7 +18,7 @@ public class Program
                 item.Diario.Turma.Id,//TURMA
                 item.Diario.Turma.NomeTurma(item.Diario.Turma.Periodo, item.Diario.Turma.Curso.Nome),//NOME DA TURMA
                 [
-                    new Diario (Id: item.Diario.Id, TurmaId: item.Diario.Turma.Id, ProfessorId:  item.Perfil.Id, DisciplinaId: item.Diario.Disciplina.Id, QuantidadeMaximaSemana: (item.Diario.Disciplina.CargaHoraria/ 40)),//SOCIOLOGIA
+                    new Diario (Id: item.Diario.Id, TurmaId: item.Diario.Turma.Id, ProfessorId:  item.Perfil.Usuario.Id, DisciplinaId: item.Diario.Disciplina.Id, QuantidadeMaximaSemana: (item.Diario.Disciplina.CargaHoraria/ 40)),//SOCIOLOGIA
                     new Diario (Id: "diario:1_2", TurmaId: "turma:1", ProfessorId: "2", DisciplinaId: "disciplina:2", QuantidadeMaximaSemana: 1),//QUIMICA
                     new Diario (Id: "diario:1_3", TurmaId: "turma:1", ProfessorId: "3", DisciplinaId: "disciplina:3", QuantidadeMaximaSemana: 2),//ESPANHOL
                     new Diario (Id: "diario:1_4", TurmaId: "turma:1", ProfessorId: "4", DisciplinaId: "disciplina:4", QuantidadeMaximaSemana: 3),//PORTUGUES
@@ -56,7 +56,7 @@ public class Program
 
         var professores = new Professor[] {
             new(
-                "26cda49f-1254-4659-91bc-c70068d17dd4",
+                "17ed5d7e-79d4-4cfd-811c-263247dc4511",
                 "Danilo",
                 [
                     new DisponibilidadeDia(DiaSemanaIso.SEGUNDA, new Intervalo("13:00", "17:29:59")),
